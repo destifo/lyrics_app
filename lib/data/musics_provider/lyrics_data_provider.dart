@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:lyrics_app/model/Track.dart';
 import 'package:http/http.dart' as http;
 
 class LyricsDataProvider {
@@ -21,8 +20,6 @@ class LyricsDataProvider {
       final body = jsonDecode(response.body);
       final lyrics =
           body['message']['body']['lyrics']['lyrics_body'].toString();
-
-      // print(lyrics);
 
       return lyrics;
     }

@@ -16,7 +16,6 @@ class LyricsDataBloc extends Bloc<LyricsDataEvent, LyricsDataState> {
     emit(LyricsLoading());
     try {
       final lyrics = await lyricsDataProvider.getLyrics(event.trackId);
-      // print(lyrics);
       final track = await trackDetailProvider.getTrackDetail(event.trackId);
 
       emit(LyricsLoaded(lyrics: lyrics, track: track));

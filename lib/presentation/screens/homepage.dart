@@ -47,18 +47,15 @@ class Homepage extends StatelessWidget {
                   Expanded(
                     child: BlocBuilder<LyricsBloc, LyricState>(
                       builder: (context, state) {
-                        // print(state);
                         if (state is TracksLoaded) {
-                          // print(state.tracks[0].albumName);
                           return ListView.builder(
                               itemCount: state.tracks.length,
                               itemBuilder: (context, index) {
-                                // print('hey');
                                 Track track = state.tracks[index];
-                                // print(track.albumName);
                                 return Column(children: [
                                   GestureDetector(
                                     onTap: () {
+                                      print(track.name);
                                       BlocProvider.of<LyricsDataBloc>(context)
                                           .add(LoadLyrics(track.trackId));
                                       Navigator.push(
@@ -73,7 +70,16 @@ class Homepage extends StatelessWidget {
                                           const Icon(Icons.music_video_sharp),
                                       title: Text(track.name),
                                       subtitle: Text(track.albumName),
-                                      trailing: Text(track.artist),
+                                      trailing: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.2,
+                                        child: Flexible(
+                                          child: Text(
+                                            track.artist,
+                                          ),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                   const Divider(),
