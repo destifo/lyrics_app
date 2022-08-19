@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(create: (context) => LyricsDataBloc()),
         BlocProvider(
-          create: (context) => NetworkBloc(),
+          create: (context) => NetworkBloc()..add(Disconnected()),
         )
       ],
       child: MaterialApp(

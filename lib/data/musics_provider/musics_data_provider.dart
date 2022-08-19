@@ -5,7 +5,7 @@ import 'package:lyrics_app/model/Track.dart';
 
 class MusicsDataProvider {
   final String baseUrl =
-      'https://api.musixmatch.com/ws/1.1/chart.tracks.get?apikey=2d782bc7a52a41ba2fc1ef05b9cf40d7';
+      'https://api.musixmatch.com/ws/1.1/chart.tracks.get?apikey=19f33888bf0164848831efe95cd1d7ca';
 
   Future<List<Track>> getTracks() async {
     final response = await http.get(

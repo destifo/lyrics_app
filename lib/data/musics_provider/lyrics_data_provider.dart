@@ -8,7 +8,7 @@ class LyricsDataProvider {
 
   Future<String> getLyrics(int trackId) async {
     final String baseUrl =
-        'https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${trackId}&apikey=2d782bc7a52a41ba2fc1ef05b9cf40d7';
+        'https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${trackId}&apikey=19f33888bf0164848831efe95cd1d7ca';
 
     final response = await http.get(
       Uri.parse(baseUrl),
