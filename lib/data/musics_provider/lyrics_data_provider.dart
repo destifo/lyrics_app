@@ -22,7 +22,7 @@ class LyricsDataProvider {
       final lyrics =
           body['message']['body']['lyrics']['lyrics_body'].toString();
 
-      print(lyrics);
+      // print(lyrics);
 
       return lyrics;
     }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lyrics_app/bloc/lyrics/lyrics_data_bloc.dart';
+import 'package:lyrics_app/bloc/network/network_bloc.dart';
+import 'package:lyrics_app/bloc/network/network_event.dart';
 import 'package:lyrics_app/bloc/tracks/lyric_event.dart';
 import 'package:lyrics_app/bloc/tracks/lyrics_bloc.dart';
 import 'package:lyrics_app/data/musics_provider/musics_data_provider.dart';
@@ -23,6 +25,9 @@ class MyApp extends StatelessWidget {
               LyricsBloc(musicsDataProvider)..add(LoadTracks()),
         ),
         BlocProvider(create: (context) => LyricsDataBloc()),
+        BlocProvider(
+          create: (context) => NetworkBloc(),
+        )
       ],
       child: MaterialApp(
         title: 'Lyrics App',
