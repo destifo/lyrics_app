@@ -70,14 +70,12 @@ class Homepage extends StatelessWidget {
                                           const Icon(Icons.music_video_sharp),
                                       title: Text(track.name),
                                       subtitle: Text(track.albumName),
-                                      trailing: Container(
+                                      trailing: SizedBox(
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 0.2,
-                                        child: Flexible(
-                                          child: Text(
-                                            track.artist,
-                                          ),
+                                        child: Text(
+                                          track.artist,
                                         ),
                                       ),
                                     ),
